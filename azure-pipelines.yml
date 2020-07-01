@@ -31,13 +31,7 @@ steps:
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'appcenter-sampleapp.keystore'
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '$(Build.SourcesDirectory)/app/build/outputs/apk/release/*.apk'
-    apksignerKeystoreFile: 'appcenter-sampleapp.keystore'
-    apksignerKeystorePassword: '$(keystore-password)'
-    apksignerKeystoreAlias: '$(android-alias)'
-    apksignerKeyPassword: '$(android-key-password)'
+
 - task: AppCenterTest@1
   inputs:
     appFile: '$(Build.SourcesDirectory)/app/build/outputs/apk/debug/*.apk'
@@ -47,7 +41,7 @@ steps:
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'App Center Token'
     appSlug: 'XTCTeam/appcenter-sampleapp-android'
-    devices: 'ef7113b6'
+    devices: '26d62a6c'
     localeOption: 'en_US'
 
 - task: AppCenterDistribute@3
