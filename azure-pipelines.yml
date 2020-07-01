@@ -19,8 +19,8 @@ variables:
 steps:
 - task: Gradle@2
   inputs:
-    gradleWrapperFile: '$(Build.Repository.LocalPath)/gradlew'
-    workingDirectory: '$(Build.Repository.LocalPath)'
+    gradleWrapperFile: 'gradlew'
+    workingDirectory: ''
     tasks: 'clean build test assembleRelease assembleDebug assembleAndroidTest'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
