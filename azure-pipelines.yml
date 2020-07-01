@@ -34,10 +34,10 @@ steps:
 
 - task: AppCenterTest@1
   inputs:
-    appFile: '$(Build.SourcesDirectory)/app/build/outputs/apk/debug/*.apk'
+    appFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/*.apk'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'espresso'
-    espressoBuildDirectory: '$(Build.SourcesDirectory)/app/build/outputs/apk/androidTest/debug'
+    espressoBuildDirectory: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/androidTest/debug'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'App Center Token'
     appSlug: 'XTCTeam/appcenter-sampleapp-android'
@@ -48,9 +48,9 @@ steps:
   inputs:
     serverEndpoint: 'App Center Token'
     appSlug: 'XTCTeam/appcenter-sampleapp-android'
-    appFile: '$(Build.SourcesDirectory)/app/build/outputs/apk/release/*.apk'
+    appFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/*.apk'
     symbolsOption: 'Android'
-    symbolsMappingTxtFile: '$(Build.SourcesDirectory)/app/build/outputs/mapping/release/mapping.txt'
+    symbolsMappingTxtFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/mapping/release/mapping.txt'
     releaseNotesOption: 'input'
     releaseNotesInput: 'Release notes from Azure Pipelines Task'
     destinationType: 'groups'
