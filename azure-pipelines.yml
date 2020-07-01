@@ -26,7 +26,7 @@ steps:
     frameworkOption: 'espresso'
     espressoBuildDirectory: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/androidTest/debug'
     credentialsOption: 'serviceEndpoint'
-    serverEndpoint: 'App Center Token'
+    serverEndpoint: 'App Center'
     appSlug: 'senyum/appcenter-sampleapp-android'
     devices: '26d62a6c'
     localeOption: 'en_US'
