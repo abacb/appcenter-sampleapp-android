@@ -25,6 +25,18 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
   displayName: Copy .apk files to artifact staging directory
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'android.jks'
+    
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/*.apk'
+    apksignerKeystoreFile: 'android.jks'
+    apksignerKeystorePassword: 'drummer7'
+    apksignerKeystoreAlias: 'MyAndroidKey'
+    apksignerKeyPassword: 'drummer7'
+
 - task: AppCenterTest@1
   inputs:
     appFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/*.apk'
