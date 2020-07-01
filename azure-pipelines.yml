@@ -33,7 +33,7 @@ steps:
 
 - task: AppCenterDistribute@3
   inputs:
-    serverEndpoint: 'App Center Token'
+    serverEndpoint: 'App Center'
     appSlug: 'senyum/appcenter-sampleapp-android'
     appFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/*.apk'
     symbolsOption: 'Android'
