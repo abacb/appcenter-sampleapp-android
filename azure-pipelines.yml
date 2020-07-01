@@ -19,6 +19,12 @@ steps:
     gradleOptions: '-Xmx3072m'
     sonarQubeRunAnalysis: false
 
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+  displayName: Copy .apk files to artifact staging directory
+
 - task: AppCenterTest@1
   inputs:
     appFile: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/*.apk'
