@@ -33,6 +33,6 @@ steps:
     espressoBuildDirectory: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/androidTest/debug'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'App Center'
-    appSlug: 'senyum/appcenter-sampleapp-android'
-    devices: '26d62a6c'
+    appSlug: 'senyumorg/MyAppCenterAndroid'
+    devices: 'a5123050'
     localeOption: 'en_US'
