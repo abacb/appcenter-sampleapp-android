@@ -19,6 +19,16 @@ steps:
     gradleOptions: '-Xmx3072m'
     sonarQubeRunAnalysis: false
 
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+  displayName: Copy .apk files to artifact staging directory
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'android.jks'
+
 - task: AndroidSigning@3
   inputs:
     apkFiles: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/*.apk'
@@ -26,12 +36,6 @@ steps:
     apksignerKeystorePassword: 'drummer7'
     apksignerKeystoreAlias: 'MyAndroidKey'
     apksignerKeyPassword: 'drummer7'
-
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.apk'
-    targetFolder: '$(build.artifactStagingDirectory)'
-  displayName: Copy .apk files to artifact staging directory
 
 - task: AppCenterTest@1
   inputs:
