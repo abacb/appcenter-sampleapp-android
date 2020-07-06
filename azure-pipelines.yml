@@ -36,3 +36,5 @@ steps:
     appSlug: 'senyumorg/MyAppCenterAndroid'
     devices: 'a5123050'
     localeOption: 'en_US'
+
+
