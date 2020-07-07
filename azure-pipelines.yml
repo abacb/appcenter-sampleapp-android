@@ -40,4 +40,5 @@ steps:
     appSlug: 'senyumorg/MyAppCenterAndroid'
     devices: 'a5123050'
     localeOption: 'en_US'
-
+    runOptions: --test-output-dir $(IntegrationTest) --merged-file-name TestResults.xml
+    showDebugOutput: true
