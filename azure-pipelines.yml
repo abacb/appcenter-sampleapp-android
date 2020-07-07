@@ -42,3 +42,10 @@ steps:
     localeOption: 'en_US'
     runOptions: --test-output-dir $(IntegrationTest) --merged-file-name TestResults.xml
     showDebugOutput: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+    testRunTitle: 'AppCenter Test run'
